@@ -1,0 +1,169 @@
+<div class="super-table-wrapper">
+  <!-- Table Title -->
+  <h3 *ngIf="config.title" class="st-title">{{ config.title }}</h3>
+
+  <div *ngIf="config.globalSearch" class="st-global-search">
+    <input
+      pInputText
+      [(ngModel)]="globalSearchValue"
+      (input)="applyGlobalSearch()"
+      placeholder="Search..."
+      class="p-inputtext p-component"
+    />
+  </div>
+
+  <p-table #table
+    [value]="data"
+    [globalFilterFields]="globalFilterFields"
+    [paginator]="hasPagination"
+    [rows]="config.pagination?.rows"
+    [rowsPerPageOptions]="config.pagination?.rowsPerPageOptions"
+    [sortMode]="config.sort?.multiple ? 'multiple' : 'single'"
+    [sortField]="defaultSortField"
+    [sortOrder]="defaultSortOrder"
+    [scrollable]="config.scroll?.enabled"
+    [scrollHeight]="scrollHeightValue"
+    [style.width]="config.scroll?.width || '100%'"
+    [resizableColumns]="true"
+    [dataKey]="'id'"
+    [selectionMode]="selectionMode()"
+    [(selection)]="selectedRows"
+    (onSort)="onSort($event)"
+    (onPage)="onPage($event)"
+    (onFilter)="onFilter($event)"
+    (selectionChange)="onSelectionChange($event)"
+    [styleClass]="tableStyleClass"
+    [frozenValue]="frozenTopRows"
+    [frozenColumns]="frozenLeftColumns"
+    [reorderableColumns]="config.reorder?.columns"
+    (onColReorder)="onColumnReorder($event)"
+  >
+
+    <!-- Column Widths -->
+    <ng-template pTemplate="colgroup">
+      <colgroup>
+        <col *ngFor="let col of config.columns" [style.width]="col.width || null"/>
+      </colgroup>
+    </ng-template>
+
+    <!-- Table Header with Column Groups -->
+    <ng-template pTemplate="header">
+      <ng-container *ngIf="config.columnGroups?.length; else normalHeader">
+        <tr *ngFor="let groupRow of config.columnGroups">
+          <th *ngFor="let group of groupRow"
+              class="st-column-group"
+              [attr.colspan]="group.colspan"
+              [attr.rowspan]="group.rowspan"
+              [ngClass]="group.styleClass"
+              [style.text-align]="group.align || 'center'">
+            {{ group.header }}
+          </th>
+        </tr>
+      </ng-container>
+
+      <ng-template #normalHeader>
+        <tr>
+          <th *ngIf="config.reorder?.rows"></th>
+          <th *ngFor="let col of config.columns"
+              [pSortableColumn]="col.sortable ? col.field : undefined"
+              [ngClass]="col.styleClass"
+              [style.text-align]="col.align || 'left'"
+              [style.width]="col.width"
+              pResizableColumn
+              (resizeEnd)="applyColumnResize($event, col)">
+            {{ col.header }}
+            <span class="st-resize-handle" (mousedown)="startResize($event, col, $event.target)"></span>
+            <p-sortIcon *ngIf="col.sortable" [field]="col.field"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+    </ng-template>
+
+    <!-- Table Body -->
+    <ng-template pTemplate="body" let-row let-rowIndex="rowIndex">
+
+      <!-- Row Group Subheader -->
+      <ng-container *ngIf="config.rowGroup?.enabled && config.rowGroup?.mode === 'subheader'">
+        <tr *ngIf="isSubheader(row, rowIndex)" class="st-row-group">
+          <td [attr.colspan]="config.columns.length + (config.reorder?.rows ? 1 : 0)">
+            {{ getGroupLabel(row) }}
+          </td>
+        </tr>
+      </ng-container>
+
+      <!-- Regular Row -->
+      <tr
+        [pReorderableRow]="config.reorder?.rows ? rowIndex : undefined"
+        [ngStyle]="config.rowStyle ? config.rowStyle(row) : null"
+        (click)="onRowClick(row, $event)"
+        [class.st-row-selected]="isRowSelected(row)">
+        
+        <td *ngIf="config.reorder?.rows">
+          <i class="pi pi-bars"></i>
+        </td>
+
+        <td *ngFor="let col of config.columns"
+            [attr.rowspan]="getRowSpan(row, col)"
+            [ngClass]="col.styleClass"
+            [style.text-align]="col.align">
+
+          <!-- Custom Template Support -->
+          <ng-container *ngIf="col.template; else editingCell">
+            <ng-container *ngTemplateOutlet="col.template; context: { $implicit: row }"></ng-container>
+          </ng-container>
+
+          <!-- Cell Editing -->
+          <ng-template #editingCell>
+            <ng-container *ngIf="config.editable?.enabled && config.editable?.mode === 'cell'; else rowEditTpl">
+              <p-cellEditor>
+                <ng-template pTemplate="input">
+                  <input type="text" [(ngModel)]="row[col.field]" />
+                </ng-template>
+                <ng-template pTemplate="output">
+                  {{ row[col.field] ?? '' }}
+                </ng-template>
+              </p-cellEditor>
+            </ng-container>
+
+            <!-- Row Editing -->
+            <ng-template #rowEditTpl>
+              <ng-container *ngIf="isRowEditing(row); else normalCell">
+                <input type="text" [(ngModel)]="row[col.field]" />
+              </ng-container>
+              <ng-template #normalCell>
+                {{ row[col.field] ?? '' }}
+              </ng-template>
+            </ng-template>
+          </ng-template>
+
+        </td>
+
+        <!-- Row Editing Buttons -->
+        <td *ngIf="config.editable?.enabled && config.editable?.mode === 'row'">
+          <button *ngIf="!isRowEditing(row)" (click)="startRowEdit(row)">Edit</button>
+          <button *ngIf="isRowEditing(row)" (click)="saveRowEdit(row)">Save</button>
+          <button *ngIf="isRowEditing(row)" (click)="cancelRowEdit(row)">Cancel</button>
+        </td>
+
+      </tr>
+
+    </ng-template>
+
+    <!-- Row Expansion -->
+    <ng-template pTemplate="rowexpansion" let-row>
+      <div class="st-row-expansion">
+        <strong>Details:</strong> {{ row | json }}
+      </div>
+    </ng-template>
+
+    <!-- Empty State -->
+    <ng-template pTemplate="empty">
+      <tr>
+        <td [attr.colspan]="config.columns.length + (config.reorder?.rows ? 1 : 0)" class="st-empty">
+          No records found
+        </td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+</div>

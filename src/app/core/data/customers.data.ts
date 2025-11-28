@@ -1,0 +1,22 @@
+export const PH1_CUSTOMERS = [
+  { id: 2001, name: 'James Anderson', country: 'USA', company: 'BlueSoft Corp', representative: 'Amy Elsner', status: 'new', balance: 3200.75, activity: 85, verified: true, date: '2024-02-10' },
+  { id: 2002, name: 'Maria Gonzalez', country: 'Spain', company: 'NovaCom', representative: 'Anna Fali', status: 'qualified', balance: 1575.00, activity: 60, verified: false, date: '2024-01-22' },
+  { id: 2003, name: 'Akash Patel', country: 'India', company: 'TechWorld', representative: 'Stephen Shaw', status: 'pending', balance: 920.10, activity: 45, verified: true, date: '2024-03-05' },
+  { id: 2004, name: 'Lisa Turner', country: 'UK', company: 'FinEdge', representative: 'Asiya Javayant', status: 'renewal', balance: 2048.55, activity: 72, verified: false, date: '2024-01-18' },
+  { id: 2005, name: 'Chen Wei', country: 'China', company: 'GreenTech', representative: 'Ioni Bowcher', status: 'qualified', balance: 680.90, activity: 50, verified: true, date: '2024-02-26' },
+  { id: 2006, name: 'Michael Brown', country: 'USA', company: 'SoftMatrix', representative: 'Ivan Magalhaes', status: 'pending', balance: 1130.25, activity: 30, verified: false, date: '2024-03-03' },
+  { id: 2007, name: 'Ravi Kumar', country: 'India', company: 'CodeXpress', representative: 'Amy Elsner', status: 'new', balance: 4300.00, activity: 90, verified: true, date: '2024-02-12' },
+  { id: 2008, name: 'Sara Müller', country: 'Germany', company: 'DataSphere', representative: 'Anna Fali', status: 'renewal', balance: 2700.40, activity: 78, verified: true, date: '2024-02-28' },
+  { id: 2009, name: 'David Johnson', country: 'USA', company: 'LogicGate', representative: 'Stephen Shaw', status: 'qualified', balance: 1520.15, activity: 66, verified: false, date: '2024-03-10' },
+  { id: 2010, name: 'Yuki Tanaka', country: 'Japan', company: 'BrightSoft', representative: 'Ioni Bowcher', status: 'new', balance: 1900.80, activity: 55, verified: true, date: '2024-02-14' },
+  { id: 2011, name: 'Ola Nordmann', country: 'Norway', company: 'Nordic Labs', representative: 'Amy Elsner', status: 'qualified', balance: 1200.00, activity: 63, verified: true, date: '2024-01-30' },
+  { id: 2012, name: 'Carlos Silva', country: 'Brazil', company: 'AgriWorks', representative: 'Anna Fali', status: 'pending', balance: 760.50, activity: 40, verified: false, date: '2024-02-08' },
+  { id: 2013, name: 'Fatima Zahra', country: 'Morocco', company: 'AtlasCo', representative: 'Stephen Shaw', status: 'new', balance: 150.00, activity: 25, verified: false, date: '2024-03-01' },
+  { id: 2014, name: 'Liam O’Brien', country: 'Ireland', company: 'CloverTech', representative: 'Ioni Bowcher', status: 'renewal', balance: 4230.00, activity: 82, verified: true, date: '2024-01-25' },
+  { id: 2015, name: 'Elena Petrova', country: 'Russia', company: 'VolgaSoft', representative: 'Amy Elsner', status: 'qualified', balance: 980.20, activity: 58, verified: true, date: '2024-02-11' },
+  { id: 2016, name: 'Mohamed Ali', country: 'Egypt', company: 'Nile Systems', representative: 'Anna Fali', status: 'pending', balance: 610.00, activity: 33, verified: false, date: '2024-03-07' },
+  { id: 2017, name: 'Sofia Rossi', country: 'Italy', company: 'ArteMedia', representative: 'Stephen Shaw', status: 'qualified', balance: 1450.35, activity: 69, verified: true, date: '2024-02-06' },
+  { id: 2018, name: 'Lucas Martins', country: 'Portugal', company: 'Lisbon Labs', representative: 'Ioni Bowcher', status: 'new', balance: 770.00, activity: 47, verified: false, date: '2024-01-20' },
+  { id: 2019, name: 'Nadia Khan', country: 'Pakistan', company: 'PakSoft', representative: 'Amy Elsner', status: 'renewal', balance: 2999.99, activity: 80, verified: true, date: '2024-02-22' },
+  { id: 2020, name: 'Samuel Lee', country: 'South Korea', company: 'SeoulWare', representative: 'Anna Fali', status: 'qualified', balance: 1345.67, activity: 70, verified: false, date: '2024-02-02' }
+];

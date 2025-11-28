@@ -1,0 +1,19 @@
+<p-table [value]="people">
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let col of cols"
+          [pSortableColumn]="col.sortable ? col.field : undefined">
+        {{ col.header }}
+        <p-sortIcon *ngIf="col.sortable" [field]="col.field"></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-row>
+    <tr>
+      <td *ngFor="let col of cols">
+        {{ row[col.field] }}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

@@ -1,0 +1,22 @@
+export const PH1_PRODUCTS = [
+  { id: 'P-1001', name: 'UltraWidget', category: 'Hardware', price: 199.99, inventory: 340, rating: 4.6, supplier: 'BlueSoft Corp', country: 'USA' },
+  { id: 'P-1002', name: 'CloudSuite', category: 'Software', price: 499.00, inventory: 120, rating: 4.2, supplier: 'NovaCom', country: 'Spain' },
+  { id: 'P-1003', name: 'DataPro 3', category: 'Software', price: 329.50, inventory: 210, rating: 4.4, supplier: 'TechWorld', country: 'India' },
+  { id: 'P-1004', name: 'SmartSensor', category: 'IoT', price: 59.95, inventory: 900, rating: 4.1, supplier: 'GreenTech', country: 'China' },
+  { id: 'P-1005', name: 'SecureGate', category: 'Security', price: 129.00, inventory: 420, rating: 4.7, supplier: 'FinEdge', country: 'UK' },
+  { id: 'P-1006', name: 'FlowDB', category: 'Database', price: 799.99, inventory: 50, rating: 4.5, supplier: 'DataSphere', country: 'Germany' },
+  { id: 'P-1007', name: 'CodeKit', category: 'Developer', price: 49.00, inventory: 1500, rating: 4.0, supplier: 'CodeXpress', country: 'India' },
+  { id: 'P-1008', name: 'BrightPanel', category: 'Display', price: 299.25, inventory: 230, rating: 4.3, supplier: 'BrightSoft', country: 'Japan' },
+  { id: 'P-1009', name: 'AccelEngine', category: 'AI', price: 1299.00, inventory: 18, rating: 4.8, supplier: 'SoftMatrix', country: 'USA' },
+  { id: 'P-1010', name: 'NanoPack', category: 'Hardware', price: 9.99, inventory: 5000, rating: 3.9, supplier: 'GreenTech', country: 'China' },
+  { id: 'P-1011', name: 'EdgeOS', category: 'Software', price: 199.99, inventory: 320, rating: 4.2, supplier: 'BlueSoft Corp', country: 'USA' },
+  { id: 'P-1012', name: 'PortalX', category: 'Platform', price: 999.00, inventory: 60, rating: 4.6, supplier: 'NovaCom', country: 'Spain' },
+  { id: 'P-1013', name: 'HydroPump', category: 'Industrial', price: 349.95, inventory: 95, rating: 4.1, supplier: 'AgriWorks', country: 'Brazil' },
+  { id: 'P-1014', name: 'SafeBox', category: 'Security', price: 79.50, inventory: 760, rating: 4.0, supplier: 'LogicGate', country: 'USA' },
+  { id: 'P-1015', name: 'UXStudio', category: 'Design', price: 229.00, inventory: 270, rating: 4.3, supplier: 'ArteMedia', country: 'Italy' },
+  { id: 'P-1016', name: 'CloudCache', category: 'Infrastructure', price: 259.00, inventory: 140, rating: 4.4, supplier: 'VolgaSoft', country: 'Russia' },
+  { id: 'P-1017', name: 'QuantumLink', category: 'Networking', price: 449.00, inventory: 44, rating: 4.7, supplier: 'CloverTech', country: 'Ireland' },
+  { id: 'P-1018', name: 'FarmSight', category: 'AgriTech', price: 59.00, inventory: 600, rating: 4.2, supplier: 'AgriWorks', country: 'Brazil' },
+  { id: 'P-1019', name: 'StudyPro', category: 'EdTech', price: 19.00, inventory: 1500, rating: 3.8, supplier: 'Lisbon Labs', country: 'Portugal' },
+  { id: 'P-1020', name: 'CityMaps', category: 'Service', price: 4.99, inventory: 8000, rating: 4.0, supplier: 'SeoulWare', country: 'South Korea' }
+];

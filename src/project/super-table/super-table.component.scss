@@ -1,0 +1,156 @@
+.super-table-wrapper {
+font-family: "Helvetica Neue", Arial, sans-serif;
+color: #323232;
+}
+
+.st-title {
+margin: 0 0 12px 0;
+font-size: 1.05rem;
+font-weight: 600;
+color: #1f2937;
+}
+
+.st-table {
+--st-header-bg: #f8fafc;
+--st-border: #e6edf3;
+border: 1px solid var(--st-border);
+border-radius: 6px;
+overflow: hidden;
+
+.p-datatable-thead > tr > th {
+background: var(--st-header-bg);
+font-weight: 600;
+padding: 0.75rem 1rem;
+border-bottom: 1px solid var(--st-border);
+text-align: left;
+}
+
+.p-datatable-tbody > tr > td {
+padding: 0.6rem 0.75rem;
+border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+vertical-align: middle;
+
+input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #dbe7ef;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+button {
+  margin-left: 6px;
+  padding: 3px 8px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background: #f3f4f6;
+  cursor: pointer;
+  transition: 0.2s all;
+
+  &:hover {
+    background: #e2e8f0;
+  }
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+}
+
+
+}
+
+&.st-striped .p-datatable-tbody > tr:nth-child(odd) > td {
+background: #fbfdff;
+}
+
+&.st-dense .p-datatable-tbody > tr > td,
+&.st-dense .p-datatable-thead > tr > th {
+padding: 0.35rem 0.5rem;
+font-size: 0.92rem;
+}
+
+.st-filter-input,
+.st-filter-select {
+width: 100%;
+margin-top: 6px;
+box-sizing: border-box;
+padding: 6px 8px;
+border: 1px solid #dbe7ef;
+border-radius: 4px;
+background: #ffffff;
+}
+
+.st-empty {
+padding: 18px 12px;
+text-align: center;
+color: #6b7280;
+font-style: italic;
+}
+}
+
+/* Grouped column headers */
+.st-column-group {
+  border: 1px solid #999;
+  border-bottom: none;
+  background-color: #f0f0f0;
+  font-weight: 600;
+  text-align: center;
+}
+
+th {
+  border: 1px solid #ccc;
+  border-top: none; /* connects with group header */
+  background-color: #fafafa;
+  text-align: center;
+}
+
+
+.st-column-group:last-child {
+  border-right: none;
+}
+
+/* Grouped header row */
+.st-column-group {
+  border: 1px solid #999;          /* full border */
+  border-bottom: none;             /* connect with normal header */
+  background-color: #f0f0f0;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Normal header row under group */
+th {
+  border: 1px solid #ccc;
+  border-top: none;               /* connect with group header */
+  background-color: #fafafa;
+  text-align: center;
+}
+
+/* Merge left-right borders for first/last cells */
+tr th:first-child {
+  border-left: 1px solid #999;
+}
+tr th:last-child {
+  border-right: 1px solid #999;
+}
+
+
+/* Table wrapper to control border collapse */
+.super-table-wrapper table {
+  border-collapse: collapse; /* ensures borders merge correctly */
+}
+
+/* Table body cells */
+.super-table-wrapper td {
+  border: 1px solid #ccc;    /* vertical & horizontal borders */
+  padding: 8px;
+}
+
+/* Optional: highlight selected row */
+.st-row-selected td {
+  background-color: #e6f7ff;
+}
+
+

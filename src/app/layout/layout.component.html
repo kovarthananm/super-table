@@ -1,0 +1,71 @@
+<div class="layout-container">
+
+  <aside class="sidebar">
+    <h3 class="menu-title">SuperTable Menu</h3>
+
+    <ul class="menu">
+
+      <!-- PHASE 1 -->
+      <li class="menu-section">Phase 1 Examples</li>
+      <li>
+        <a routerLink="/super-table-basic/basic-table"
+           routerLinkActive="active">Basic Table</a>
+      </li>
+
+      <li>
+        <a routerLink="/super-table-basic/sorting-table"
+           routerLinkActive="active">Sorting</a>
+      </li>
+      <li>
+        <a routerLink="/super-table-basic/pagination"
+           routerLinkActive="active">Pagination</a>
+      </li>
+      
+
+      <!-- PHASE 2 -->
+      <li class="menu-section">Phase 2 Features</li>
+      <li>
+        <a routerLink="/super-table-basic/search-table"
+           routerLinkActive="active">Filtering</a>
+      </li>
+      <!-- <li>
+        <a routerLink="/super-table-basic/templating"
+           routerLinkActive="active">Templating</a>
+      </li> -->
+      
+      <li>
+        <a routerLink="/super-table-basic/pagination-sort"
+           routerLinkActive="active">Pagination + Sort</a>
+      </li>
+      <li>
+        <a routerLink="/super-table-basic/search-sort-page"
+           routerLinkActive="active">Search + Sort + Pagination</a>
+      </li>
+      <!-- <li>
+        <a routerLink="/super-table-basic/selection"
+           routerLinkActive="active">Row Selection</a>
+      </li> -->
+
+      <!-- SUBMENU (Multi Level) -->
+      <li class="menu-submenu">
+        <span class="submenu-title">Advanced</span>
+        <ul>
+          <!-- <li><a routerLink="/super-table-basic/row-expansion" routerLinkActive="active">Row Expansion</a></li> -->
+          <li><a routerLink="/super-table-basic/edit-option" routerLinkActive="active">Editing</a></li>
+          <li><a routerLink="/super-table-basic/scroll-test" routerLinkActive="active">Scrolling</a></li>
+          <!-- <li><a routerLink="/super-table-basic/frozen-page" routerLinkActive="active">Frozen Columns/Rows</a></li> -->
+          <li><a routerLink="/super-table-basic/column-group" routerLinkActive="active">Column Groups</a></li>
+          <!-- <li><a routerLink="/super-table-basic/row-span" routerLinkActive="active">Row Span Group</a></li> -->
+          <li><a routerLink="/super-table-basic/column-resize" routerLinkActive="active">Column Resize</a></li>
+          <li><a routerLink="/super-table-basic/reorder-column" routerLinkActive="active">Reorder Rows</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>
