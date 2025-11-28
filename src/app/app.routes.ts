@@ -1,9 +1,5 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-import { BasicComponent } from './features/basic/basic.component';
-import { SuperTableBasicComponent } from './features/super-table-basic/super-table-basic.component';
-import { SuperTableDynamicComponent } from './features/super-table-dynamic/super-table-dynamic.component';
-import { SuperTableSortingComponent } from './features/super-table-dynamic/super-table-sorting.component';
 import Phase1BasicPage from './demo-phase/phase-1/basic-table/basic-table-page';
 import Phase1DynamicTablePage from './demo-phase/phase-1/dynamic-table/dynamic-table';
 import Phase1SortingTablePage from './demo-phase/phase-1/sorting-table/sorting-table';
@@ -16,7 +12,6 @@ import Phase2SelectionPage from './demo-phase/phase-2/selection/selection';
 import Phase2RowExpansionPage from './demo-phase/phase-2/row-expansion/row-expansion';
 import Phase2EditingPage from './demo-phase/phase-2/editing/super-table-editing.page';
 import Phase2ScrollPage from './demo-phase/phase-2/scroll-added/phase2-scroll-page';
-import Phase2FrozenPage from './demo-phase/phase-2/frozen-config';
 import Phase2FrozenDemoPage from './demo-phase/phase-2/frozen-config';
 import Phase2ColumnGroupDemoPage from './demo-phase/phase-2/colgroup-config';
 import Phase2RowspanDemoPage from './demo-phase/phase-2/row-group.config';
@@ -24,16 +19,16 @@ import Phase2ColumnResizeDemoPage from './demo-phase/phase-2/resize.config';
 import Phase2ReorderDemoPage from './demo-phase/phase-2/reorder.config';
 
 export const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: LayoutComponent,
+  //   children: [
+  //     { path: 'basic-table', component: Phase1BasicPage },
+  //     { path: '', redirectTo: 'basic', pathMatch: 'full' }
+  //   ]
+  // },
   {
     path: '',
-    component: LayoutComponent,
-    children: [
-      { path: 'basic', component: BasicComponent },
-      { path: '', redirectTo: 'basic', pathMatch: 'full' }
-    ]
-  },
-  {
-    path: 'super-table-basic',
     component: LayoutComponent,
     children: [
       
@@ -54,7 +49,7 @@ export const routes: Routes = [
       { path: 'row-span', component: Phase2RowspanDemoPage },
       { path: 'column-resize', component: Phase2ColumnResizeDemoPage },
       { path: 'reorder-column', component: Phase2ReorderDemoPage },
-      { path: '', redirectTo: 'basic', pathMatch: 'full' }
+      { path: '', redirectTo: 'basic-table', pathMatch: 'full' }
     ]
 }
 //   },
